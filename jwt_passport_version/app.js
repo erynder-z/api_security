@@ -108,7 +108,7 @@ passport.use(
     },
     async (email, password, done) => {
       try {
-        if (passport.length <= 4 || !email) {
+        if (password.length <= 4 || !email) {
           done(null, false, { message: 'Credentials invalid' });
         } else {
           const hashedPass = await bcrypt.hash(password, 10);
